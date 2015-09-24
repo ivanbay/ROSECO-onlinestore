@@ -1,7 +1,7 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"name": "ivanbay/rosecomarketingventure",
+	"description": "ROSECO Marketing Venture online store.",
+	"keywords": ["framework", "laravel", "ROSECO", "ecommerce", "store", "onlinestore"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
