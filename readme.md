@@ -29,7 +29,7 @@ This online store is developed in Laravel v4.2
 * MySQL 5.5.32
 
 
-## Installation
+## Installation Guide
 
 ### Using Composer 
 
