@@ -1,4 +1,4 @@
-# ROSECO Marketing Venture Online Store v1.0
+# ROSECO Marketing Venture Online Store v1.0.0
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
