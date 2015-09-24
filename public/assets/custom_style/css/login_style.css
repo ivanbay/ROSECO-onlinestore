@@ -1,0 +1,65 @@
+/*
+	AUTHOR: Ivan Paul Bay
+	DATE CREATED: August 01, 2014
+*/
+
+
+
+body{
+	/*background-color: #eeeeee;*/
+	background-color: #ffffff;
+	font-size: 12px;
+}
+
+#login_header{
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+
+#home-content{
+	/* background-color: #ffffff; */
+	position:fixed;
+    top: 40%;
+    left: 50%;
+    width:70em;
+    height:30em;
+    margin-top: -18em; /*set to a negative number 1/2 of your height*/
+    margin-left: -35em; /*set to a negative number 1/2 of your width*/
+    text-align: center;
+}
+
+#login_content{
+	margin: 0px auto;
+}
+
+#loginForm{
+	width: 400px;
+	padding: 20px;
+	margin: 0px auto;
+	background-color: #ffffff;
+
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+
+	-webkit-box-shadow: 0px 0px 1px 5px rgba(50, 50, 50, 0.08);
+	-moz-box-shadow:    0px 0px 1px 5px rgba(50, 50, 50, 0.08);
+	box-shadow:         0px 0px 1px 5px rgba(50, 50, 50, 0.08);
+}
+
+.login_label{
+	margin: 10px 0 30px 0;
+	font-weight: 700;
+}
+
+.login_formInputs{
+	width: 305px;
+}
+
+.loginButton{
+	float: right;
+}
+
+.input-group{
+    margin: 0 0 10px 0;   
+}

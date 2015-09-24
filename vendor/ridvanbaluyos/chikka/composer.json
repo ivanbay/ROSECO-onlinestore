@@ -1,0 +1,31 @@
+{
+    "name": "ridvanbaluyos/chikka",
+    "description": "A Laravel 4 Package for the Chikka SMS API.",
+    "type": "laravel-package",
+    "license": "GPL v2",
+    "keywords": [
+        "sms",
+        "chikka",
+        "laravel",
+        "api"
+    ],
+    "authors": [
+        {
+            "name": "ridvanbaluyos",
+            "email": "ridvan@baluyos.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Ridvanbaluyos\\Chikka\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
