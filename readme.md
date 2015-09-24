@@ -27,7 +27,7 @@ ROSECO Marketing Venture is an ecommerce site or an online store that will able 
 Add the following lines in your `composer.json` file
 ```
 "require": {
-    "ronaldborla/chikka": "@dev"
+    "ivanbay/rosecomarketingventure": "dev-master"
 },
 ```
 
