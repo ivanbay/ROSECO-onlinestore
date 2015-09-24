@@ -1,4 +1,4 @@
-# ROSECO Marketing Venture Online Store
+# ROSECO Marketing Venture Online Store v1.0
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
@@ -19,7 +19,17 @@ ROSECO Marketing Venture is an ecommerce site or an online store that will able 
 
 * SMS notification for customer
 
-### Installation
+
+## Installation
+
+### Using Composer 
+
+Add the following lines in your `composer.json` file
+```
+"require": {
+    "ronaldborla/chikka": "@dev"
+},
+```
 
 
 
