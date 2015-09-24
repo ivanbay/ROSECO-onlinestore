@@ -53,6 +53,11 @@ Database use for this project is MySQL v5.5.32.
 * Create database named ``ecommerce``
 * From phpMyAdmin or MySQL client, import ``ecommerce.sql`` that can be found inside ``database`` folder of project directory.
 
+## Official Documentation
+
+Documentation for the entire Laravel 4.2 framework can be found on the [Laravel website](http://laravel.com/docs).
+
+
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
