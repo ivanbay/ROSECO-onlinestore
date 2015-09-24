@@ -36,7 +36,9 @@ This online store is developed in Laravel v4.2
 Add the following lines in your `composer.json` file
 ```
 "require": {
+    ...
     "ivanbay/rosecomarketingventure": "dev-master"
+    ...
 },
 ```
 
