@@ -175,7 +175,7 @@
                 </div>
 
 
-                <table border='0' width="700px;" id="tbl_order_list">
+                <table border='0' width="800px;" id="tbl_order_list">
                     <tr>
                         <th>Product(s)</th>
                         <th class="text-center">Quantity</th>
@@ -190,7 +190,7 @@
                     @foreach( $order['items'] as $order_id => $order )
 
                         <tr>    
-                            <td>{{ $order['prod_name'] }}</td>
+                            <td>{{ $order['prod_name'] }} @if( $order['color'] != NULL ) ( {{$order['color']}} ) @endif</td>
                             <td class="text-center">{{ $order['qty'] }}</td>
                             <td width="100px">Php <div class="pull-right">{{ number_format($order['price'], 2, '.', ',') }}</div></td>
                             <td></td>

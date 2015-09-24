@@ -55,7 +55,7 @@
 					<td style="text-align: center;">
 						{{ Form::checkbox('delete_order[]', $order_id) }}
 					</td>
-					<td>{{ $order['prod_name'] }}</td>
+					<td>{{ $order['prod_name'] }} @if( $order['color'] != NULL ) ( {{$order['color']}} ) @endif</td>
 					<td class="text-center">{{ $order['qty'] }}</td>
 					<td width="100px">Php <div class="pull-right">{{ number_format($order['price'], 2, '.', ',') }}</div></td>
 					<td width="100px">Php <div class="pull-right">{{ number_format($order['qty'] * $order['price'], 2, '.', ',') }}</div></td>

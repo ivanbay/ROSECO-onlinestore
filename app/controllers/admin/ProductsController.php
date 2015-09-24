@@ -58,8 +58,8 @@ class ProductsController extends \BaseController
 		$destinationPath = public_path().'\\product_images\\';
 		$choicesDestinationPath = public_path().'\\choices_images\\';
 
-		print("<pre>" . print_r(Input::all(), 1) . "</pre>");
-		return "asd";
+		/*print("<pre>" . print_r(Input::all(), 1) . "</pre>");
+		return "asd";*/
 
 		$validator = Validator::make(
 							Input::get(),

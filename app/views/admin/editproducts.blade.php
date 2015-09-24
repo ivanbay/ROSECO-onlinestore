@@ -107,6 +107,15 @@
 
                     <div class="form-group">
                         <div class="label_div">
+                            <div class="label_text">Stock: <span class="text-danger">*</span></div>
+                        </div>
+                        <div class="col-sm-6">
+                            {{ Form::text('colors', $products['colors'], array('class' => 'formInputs form-control', 'id' => 'colors')) }}<span class="text-danger pull-right" style="font-size: 10px;">Leave blank if color is not available. <br> Semi-colon(;) delimited for multiple colors.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label_div">
                             <div class="label_text">&nbsp;</div>
                         </div>
                         <div class="col-sm-6">

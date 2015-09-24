@@ -41,7 +41,8 @@ class products
 								'products.stock as stock',
 								'products.status as status',
 								'products.customizable as customizable',
-								'product_img.filename as filename'
+								'product_img.filename as filename',
+								'products.colors as colors'
 							)
 						)
 						->where('products.product_id', '=', $prod_id)
@@ -59,6 +60,7 @@ class products
 			$data['stock']			= $list[0]->stock;
 			$data['status']			= $list[0]->status;
 			$data['customizable']	= $list[0]->customizable;
+			$data['colors']			= $list[0]->colors;
 
 			foreach( $list as $product_img )
 			{
@@ -205,6 +207,7 @@ class products
 		$prod_cost 		= $inputs['product_cost'];
 		$stock 			= $inputs['stock'];
 		$customizable 	= $inputs['customizable'];
+		$colors			= !empty( $inputs['colors'] ) ? $inputs['colors'] : NULL;
 
 		try
 		{
@@ -217,7 +220,8 @@ class products
 						'category'		=> $category,
 						'dimensions'	=> $dimensions,
 						'cost'			=> $prod_cost,
-						'stock'			=> $stock
+						'stock'			=> $stock,
+						'colors'		=> $colors
 						//'customizable'	=> $customizable
 					)
 				);

@@ -48,14 +48,24 @@
 
 				{{ Form::text('qty', '', array('style' => 'width:30px;', 'placeholder' => 'Qty'))}}
 
+				@if( $products['colors'] != '' )
+
+					<?php $colors = array(); ?>
+
+					@foreach( explode(";", $products['colors']) as $color )
+
+						<?php $colors[$color] = $color; ?>
+
+					@endforeach
+
+					{{ Form::select('color', $colors) }}
+
+				@endif
+
 				@if( $products['stock'] != 0 )
-
 					{{ Form::submit('Add to cart', array('class' => 'btn btn-warning btn-xs')) }}
-
 				@else
-
 					{{ Form::button('Add to cart', array('class' => 'btn btn-warning btn-xs', 'rel' => 'tooltip', 'rel' => 'tooltip', 'data-toggle' => 'tooltip',  'data-placement' => 'top', 'title' => 'Unable to add. No stocks available.')) }}
-
 				@endif
 
 			</div>

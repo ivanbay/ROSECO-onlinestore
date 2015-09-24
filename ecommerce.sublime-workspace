@@ -303,70 +303,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 2726,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/admin/products.blade.php",
-			"settings":
-			{
-				"buffer_size": 6648,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public/assets/custom_style/js/myscripts.js",
-			"settings":
-			{
-				"buffer_size": 27740,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/admin/reportGraph.blade.php",
-			"settings":
-			{
-				"buffer_size": 1736,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/admin/ReportController.php",
-			"settings":
-			{
-				"buffer_size": 4127,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/orders.php",
-			"settings":
-			{
-				"buffer_size": 10060,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "vendor/ridvanbaluyos/chikka/src/Ridvanbaluyos/Chikka/Chikka.php",
-			"settings":
-			{
-				"buffer_size": 2322,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vendor/ridvanbaluyos/chikka/src/config/config.php",
-			"settings":
-			{
-				"buffer_size": 362,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -445,53 +381,45 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/ecommerce",
-		"/C/xampp/htdocs/ecommerce/app",
-		"/C/xampp/htdocs/ecommerce/app/config",
-		"/C/xampp/htdocs/ecommerce/app/config/packages",
-		"/C/xampp/htdocs/ecommerce/app/config/packages/thujohn",
-		"/C/xampp/htdocs/ecommerce/app/config/packages/thujohn/pdf",
-		"/C/xampp/htdocs/ecommerce/app/controllers",
-		"/C/xampp/htdocs/ecommerce/vendor",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src/config",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src/Ridvanbaluyos",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src/Ridvanbaluyos/Chikka"
+		"/C/xampp/htdocs/ROSECO-onlinestore"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/ecommerce/public/assets/custom_style/js/myscripts.js",
+		"/C/xampp/htdocs/ecommerce/public/assets/custom_style/css/style.css",
+		"/C/xampp/htdocs/ecommerce/app/views/admin/newproducts.blade.php",
+		"/C/xampp/htdocs/ecommerce/app/controllers/admin/ProductsController.php",
+		"/C/xampp/htdocs/ecommerce/app/models/products.php",
+		"/C/xampp/htdocs/ecommerce/app/views/home.blade.php",
+		"/C/xampp/htdocs/ecommerce/app/views/admin/products.blade.php",
+		"/C/xampp/htdocs/ecommerce/app/routes.php",
+		"/C/xampp/htdocs/ecommerce/app/views/admin/reportGraph.blade.php",
+		"/C/xampp/htdocs/ecommerce/app/controllers/admin/ReportController.php",
+		"/C/xampp/htdocs/ecommerce/app/models/orders.php",
+		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src/config/config.php",
+		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src/Ridvanbaluyos/Chikka/Chikka.php",
 		"/C/xampp/htdocs/ecommerce/app/config/app.php",
 		"/C/xampp/htdocs/ecommerce/app/config/database.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/admin/LoginController.php",
 		"/C/xampp/htdocs/ecommerce/app/config/packages/ridvanbaluyos/chikka/config.php",
 		"/C/xampp/htdocs/ecommerce/app/config/mail.php",
 		"/C/xampp/htdocs/ecommerce/composer.json",
-		"/C/xampp/htdocs/ecommerce/vendor/ridvanbaluyos/chikka/src/Ridvanbaluyos/Chikka/Chikka.php",
 		"/C/xampp/htdocs/antioch/app/config/packages/ridvanbaluyos/chikka/config.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/userController.php",
-		"/C/xampp/htdocs/ecommerce/public/assets/custom_style/css/style.css",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/viewOrder.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/orders.blade.php",
-		"/C/xampp/htdocs/ecommerce/public/assets/custom_style/js/myscripts.js",
 		"/C/xampp/htdocs/ecommerce/app/controllers/admin/OrdersController.php",
-		"/C/xampp/htdocs/ecommerce/app/models/orders.php",
 		"/C/xampp/htdocs/ecommerce/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php",
 		"/C/xampp/htdocs/ecommerce/app/views/terms.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/userRegistration.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/layouts/left_nav.blade.php",
-		"/C/xampp/htdocs/ecommerce/app/controllers/admin/ReportController.php",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/report.blade.php",
-		"/C/xampp/htdocs/ecommerce/app/views/admin/reportGraph.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/layouts/left_nav.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/dashboard.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/admin/DashboardController.php",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/layouts/master.blade.php",
-		"/C/xampp/htdocs/ecommerce/app/routes.php",
 		"/C/xampp/htdocs/ecommerce/app/views/viewOrder.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/OrderController.php",
-		"/C/xampp/htdocs/ecommerce/app/models/products.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/HomeController.php",
 		"/C/xampp/htdocs/ecommerce/app/views/orderForm.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/cart.blade.php",
@@ -507,17 +435,13 @@
 		"/C/xampp/htdocs/ecommerce/app/views/view_product.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/LoginController.php",
 		"/C/xampp/htdocs/ecommerce/app/views/emails/activate_account.blade.php",
-		"/C/xampp/htdocs/ecommerce/app/controllers/admin/ProductsController.php",
 		"/C/xampp/htdocs/ecommerce/app/views/emails/auth/reminder.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/views/admin/editproducts.blade.php",
-		"/C/xampp/htdocs/ecommerce/app/views/admin/newproducts.blade.php",
 		"/C/xampp/htdocs/sample/idnum.php",
 		"/C/xampp/htdocs/sample/shell_exec.php",
-		"/C/xampp/htdocs/ecommerce/app/views/home.blade.php",
 		"/C/xampp/htdocs/ecommerce/app/models/report.php",
 		"/C/xampp/htdocs/facebooktheme/index.html",
 		"/C/xampp/htdocs/ecommerce/app/controllers/commonController.php",
-		"/C/xampp/htdocs/ecommerce/app/views/admin/products.blade.php",
 		"/C/xampp/htdocs/ecommerce/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php",
 		"/C/xampp/htdocs/ecommerce/app/controllers/admin/UsersController.php",
 		"/C/xampp/htdocs/ecommerce/app/views/layouts/header.blade.php",
@@ -588,8 +512,7 @@
 		"/C/xampp/htdocs/ipdev@cav-d-ibay/app/routes.php",
 		"/C/xampp/htdocs/antioch/app/controllers/HomeController.php",
 		"/C/xampp/htdocs/ecommerce/app/helpers/custom_validator.php",
-		"/C/xampp/htdocs/ecommerce/app/views/auth/login.blade.php",
-		"/C/xampp/htdocs/ecommerce/app/views/auth/validation.blade.php"
+		"/C/xampp/htdocs/ecommerce/app/views/auth/login.blade.php"
 	],
 	"find":
 	{
@@ -607,6 +530,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Orders",
 			"active",
 			"order",
 			"orders",
@@ -688,276 +612,14 @@
 	"folders":
 	[
 		{
-			"path": "C:\\xampp\\htdocs\\ecommerce"
+			"path": "C:\\xampp\\htdocs\\ROSECO-onlinestore"
 		}
 	],
 	"groups":
 	[
 		{
-			"selected": 6,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2726,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1831,
-								1831
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 708.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/admin/products.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6648,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1522,
-								1522
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 431.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/assets/custom_style/js/myscripts.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27740,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26785,
-								26785
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 13482.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/admin/reportGraph.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								234,
-								234
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/admin/ReportController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4127,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1513,
-								1513
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1124.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/models/orders.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10060,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9963,
-								9963
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5449.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "vendor/ridvanbaluyos/chikka/src/Ridvanbaluyos/Chikka/Chikka.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2322,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								947,
-								947
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 590.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "vendor/ridvanbaluyos/chikka/src/config/config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 362,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								361,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1018,6 +680,14 @@
 		"selected_items":
 		[
 			[
+				"styl",
+				"public\\assets\\custom_style\\css\\style.css"
+			],
+			[
+				"myscript",
+				"public\\assets\\custom_style\\js\\myscripts.js"
+			],
+			[
 				"my",
 				"public\\assets\\custom_style\\js\\myscripts.js"
 			],
@@ -1062,10 +732,6 @@
 				"public\\assets\\custom_style\\js\\myscripts.js"
 			],
 			[
-				"styl",
-				"public\\assets\\custom_style\\css\\style.css"
-			],
-			[
 				"admin/layou",
 				"app\\views\\admin\\layouts\\master.blade.php"
 			],
@@ -1096,7 +762,7 @@
 		[
 			[
 				"",
-				"C:\\xampp\\htdocs\\cavlapp006\\cavlapp006.sublime-project"
+				"C:\\xampp\\htdocs\\ROSECO-onlinestore\\ecommerce.sublime-workspace"
 			],
 			[
 				"dev",

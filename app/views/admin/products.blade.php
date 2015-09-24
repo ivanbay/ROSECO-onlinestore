@@ -32,6 +32,7 @@
                         <th>Description</th>
                         <th>Category</th>
                         <th>Dimensions</th>
+                        <th>Colors</th>
                         <th>Cost</th>
                         <th>Stock</th>
                         <th>Customizable</th>
@@ -51,7 +52,16 @@
                             <td class="text-left">{{ $product->description }}</td>
                             <td class="text-left">{{ $product->category_name }}</td>
                             <td class="text-left">{{ $product->dimensions }}</td>
-                            <td class="text-left">Php {{ number_format($product->cost, 2, '.', ',') }}</td>
+                            <td class="text-center">
+                                    
+                                   @if( $product->colors != '' )
+                                        {{ $product->colors }}
+                                   @else
+                                        -
+                                   @endif 
+
+                            </td>
+                            <td class="text-left">{{ number_format($product->cost, 2, '.', ',') }}</td>
                             <td class="text-center">{{ $product->stock }}</td>
                             <td>{{ $customizable }}</td>
                             <td>
@@ -69,6 +79,7 @@
                         <th>Description</th>
                         <th>Category</th>
                         <th>Dimensions</th>
+                        <th>Colors</th>
                         <th>Cost</th>
                         <th>Stock</th>
                         <th>Customizable</th>

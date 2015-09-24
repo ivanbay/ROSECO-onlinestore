@@ -17,6 +17,7 @@ class orders
 		$price		= Input::get('price');
 		$qty 		= Input::get('qty') != '' ? Input::get('qty') : 1;
 		$stocks		= Input::get('stocks');
+		$color 		= Input::get('color') !== NULL ? Input::get('color') : NULL;
 
 		try
 		{
@@ -27,7 +28,8 @@ class orders
 									'prod_id'		=> $prod_id,
 									'prod_name'		=> $name,
 									'price'			=> $price,
-									'qty'			=> $qty
+									'qty'			=> $qty,
+									'color'			=> $color
 								)
 							);
 
@@ -72,7 +74,7 @@ class orders
 		$id = '';
 
 		$orders = DB::table('cart')
-					->selectRaw('cart.id, cart.client_ip, cart.prod_id, cart.prod_name, cart.price, cart.qty, product_parts.part_name, parts_choices.choice_name, parts_choices.choice_cost')
+					->selectRaw('cart.id, cart.client_ip, cart.prod_id, cart.prod_name, cart.price, cart.qty, cart.color, product_parts.part_name, parts_choices.choice_name, parts_choices.choice_cost')
 					->leftjoin('order_custom_parts', 'cart.id', '=', 'order_custom_parts.order_id')
 					->leftjoin('product_parts', 'order_custom_parts.part_id', '=', 'product_parts.part_id')
 					->leftjoin('parts_choices', 'product_parts.part_id', '=', 'parts_choices.part_id')
@@ -102,6 +104,7 @@ class orders
 					'prod_name'		=> $order->prod_name,
 					'price'			=> $order->price,
 					'qty'			=> $order->qty,
+					'color'			=> $order->color,
 					'part_name'		=> $part_name
 				);
 
@@ -134,7 +137,7 @@ class orders
 		$id = '';
 
 		$orders = DB::table('cart')
-					->selectRaw('orders.*, cart.id as item_id, cart.userid, cart.prod_id, cart.prod_name, cart.price, cart.qty, product_parts.part_name, parts_choices.choices_filename, parts_choices.choice_name, parts_choices.choice_cost')
+					->selectRaw('orders.*, cart.id as item_id, cart.userid, cart.prod_id, cart.prod_name, cart.price, cart.qty, cart.color, product_parts.part_name, parts_choices.choices_filename, parts_choices.choice_name, parts_choices.choice_cost')
 					->leftjoin('orders', 'cart.order_id', '=', 'orders.id')
 					->leftjoin('order_custom_parts', 'cart.id', '=', 'order_custom_parts.order_id')
 					->leftjoin('product_parts', 'order_custom_parts.part_id', '=', 'product_parts.part_id')
@@ -189,6 +192,7 @@ class orders
 					'prod_name'		=> $order->prod_name,
 					'price'			=> $order->price,
 					'qty'			=> $order->qty,
+					'color'			=> $order->color,
 					'part_name'		=> $part_name
 				);
 
@@ -209,7 +213,7 @@ class orders
 		$id = '';
 
 		$orders = DB::table('cart')
-					->selectRaw('orders.*, cart.id as item_id, cart.userid, cart.prod_id, cart.prod_name, cart.price, cart.qty, product_parts.part_name, parts_choices.choices_filename, parts_choices.choice_name, parts_choices.choice_cost')
+					->selectRaw('orders.*, cart.id as item_id, cart.userid, cart.prod_id, cart.prod_name, cart.price, cart.qty, cart.color, product_parts.part_name, parts_choices.choices_filename, parts_choices.choice_name, parts_choices.choice_cost')
 					->leftjoin('orders', 'cart.order_id', '=', 'orders.id')
 					->leftjoin('order_custom_parts', 'cart.id', '=', 'order_custom_parts.order_id')
 					->leftjoin('product_parts', 'order_custom_parts.part_id', '=', 'product_parts.part_id')
@@ -264,6 +268,7 @@ class orders
 					'prod_name'		=> $order->prod_name,
 					'price'			=> $order->price,
 					'qty'			=> $order->qty,
+					'color'			=> $order->color,
 					'part_name'		=> $part_name
 				);
 
