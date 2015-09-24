@@ -10,14 +10,16 @@ ROSECO Marketing Venture is an ecommerce site or an online store that will able 
 This online store is developed in Laravel v4.2
 
 
-#### Main Features
+## Features
+
+##### Main Features
 
 * Customization of furniture designs.
 * Customer's order form 
 * Generation of report (Daily, Monthly, Yearly) with visualization graph
 
 
-#### Additional Feature(s)
+##### Additional Feature(s)
 
 * SMS notification for customer
 
