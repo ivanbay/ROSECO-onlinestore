@@ -6,7 +6,7 @@
 
 html, body{
     /*background-color: #f6f6f6;*/
-	font-size: 15px;
+	font-size: 18px;
     height: 100%;
 }
 
@@ -16,6 +16,9 @@ html, body{
     padding: 20px;
 }
     
+input[type=text] {
+    text-transform: capitalize;
+}
 
 /* ################ Master page  ################ */
 

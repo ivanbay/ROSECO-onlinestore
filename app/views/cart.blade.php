@@ -57,8 +57,8 @@
 					</td>
 					<td>{{ $order['prod_name'] }} @if( $order['color'] != NULL ) ( {{$order['color']}} ) @endif</td>
 					<td class="text-center">{{ $order['qty'] }}</td>
-					<td width="100px">Php <div class="pull-right">{{ number_format($order['price'], 2, '.', ',') }}</div></td>
-					<td width="100px">Php <div class="pull-right">{{ number_format($order['qty'] * $order['price'], 2, '.', ',') }}</div></td>
+					<td width="100px"><div class="pull-right">{{ number_format($order['price'], 2, '.', ',') }}</div></td>
+					<td width="100px"><div class="pull-right">{{ number_format($order['qty'] * $order['price'], 2, '.', ',') }}</div></td>
 				</tr>
 
 				@if( !empty($order['part_name']) )
@@ -70,8 +70,8 @@
 								<td></td>
 								<td style="padding: 0 0 0 20px;"><i class="glyphicon glyphicon-play"></i> {{ $part_name }} ({{ $part_attr['choice_name'] }})</td>
 								<td class="text-center">1</td>
-								<td>Php <div class="pull-right">{{ number_format($part_attr['choice_cost'], 2, '.', ',') }}</div></td>
-								<td>Php <div class="pull-right">{{ number_format($part_attr['choice_cost'], 2, '.', ',') }}</div></td>
+								<td><div class="pull-right">{{ number_format($part_attr['choice_cost'], 2, '.', ',') }}</div></td>
+								<td><div class="pull-right">{{ number_format($part_attr['choice_cost'], 2, '.', ',') }}</div></td>
 							</tr>
 						@endif
 
@@ -91,7 +91,7 @@
 
 				<tr>
 					<td colspan="4"style="text-align: right;"><b>Total: &nbsp;</b> </td>
-					<td>Php <div class="pull-right">{{ number_format(array_sum($total), 2, '.', ',') }}</div></td>
+					<td><div class="pull-right">{{ number_format(array_sum($total), 2, '.', ',') }}</div></td>
 				</tr>
 
 		</table>

@@ -22,11 +22,11 @@
             <div class="clearfix"></div>
 
             <!-- working with messages / success message when redirect -->
-            <div id="display_message">
+            {{-- <div id="display_message">
                 @if(Session::has('message'))
                     {{ Session::get('message') }}
                 @endif
-            </div>
+            </div> --}}
             
             <div style="margin: 20px 0 0 0;"></div>
 
@@ -52,14 +52,6 @@
                     @endforeach
 
                 </tbody>
-            
-                <tfoot>
-                    <tr>
-                    	<th>Order No.</th>
-                        <th>Customer</th>
-                        <th>Date Ordered</th>
-                    </tr>
-                </tfoot>
             </table>
 
         </div>

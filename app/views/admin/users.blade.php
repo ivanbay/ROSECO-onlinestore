@@ -72,17 +72,6 @@
                     @endforeach
 
                 </tbody>
-            
-                <tfoot>
-                    <tr>
-                    	<th>Name</th>
-                    	<th>Address</th>
-                        <th>Username</th>
-                        <th>Date joined</th>
-                        <th>User Type</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
             </table>
 
         </div>

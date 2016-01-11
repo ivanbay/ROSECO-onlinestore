@@ -71,21 +71,6 @@
                     @endforeach                     
 
                 </tbody>
-            
-                <tfoot>
-                    <tr>
-                    	<th>Product ID</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Dimensions</th>
-                        <th>Colors</th>
-                        <th>Cost</th>
-                        <th>Stock</th>
-                        <th>Customizable</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
             </table>
 
         </div>

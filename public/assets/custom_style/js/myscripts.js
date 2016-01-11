@@ -1,12 +1,15 @@
 $(function() {
     
-    var base_url = window.location.protocol + "//" + window.location.host + "/ecommerce/public";
+    //var base_url = window.location.protocol + "//" + window.location.host + "/ROSECO-onlinestore/public";
     var delete_id = new Array();
-    
 
+    var loc = window.location;
+    var sep_url = loc.pathname.split("/");
+    var base_url = "http://" + sep_url[1] + "/" + sep_url[2];
+    
     /* Set status on load */
     $(document).ready(function(){
-
+        
         $('#records_tbl').DataTable( {
             "iDisplayLength": 10,   //records per page
             "sort": false,
@@ -844,7 +847,7 @@ $(function() {
 /* hicharts */
 $(function () {
 
-    var base_url = window.location.protocol + "//" + window.location.host + "/ecommerce/public";
+    var base_url = window.location.protocol + "//" + window.location.host + "/ROSECO-onlinestore/public";
     
     var options = {
         chart: {
