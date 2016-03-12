@@ -1,88 +1,88 @@
 @section('content')
 
-	<div class="content-div">
+<div class="content-div">
 
-		<div class="product_div">
+    <div class="product_div">
 
-			<!-- working with messages / success message when redirect -->
-	        <div id="display_message">
-	            @if(Session::has('message'))
-	                {{ Session::get('message') }}
-	            @endif
+        <!-- working with messages / success message when redirect -->
+        <div id="display_message">
+            @if(Session::has('message'))
+            {{ Session::get('message') }}
+            @endif
 
-	           @if( $errors->any() )
-	                <div class="alert alert-danger">
-	                    <b>Error(s) encounter:</b> 
-	                    
-	                    @if($errors->has('password') && !$errors->has('fname'))
-	                    	Either password is empty or mismatch.
-	                    @else
-	                    	Field indicated with (*) is required.
-	                    @endif
+            @if( $errors->any() )
+            <div class="alert alert-danger">
+                <b>Error(s) encounter:</b> 
 
-	                </div>
-	            @endif
-	        </div>
+                @if($errors->has('password') && !$errors->has('fname'))
+                Either password is empty or mismatch.
+                @else
+                Field indicated with (*) is required.
+                @endif
 
-            <div class="pull-left" style="margin: 0 0 10px 0;">
-                <a href="#addUserForm" id="addUser" data-toggle="modal" class="btn btn-primary btn-sm">
-                    <i class="glyphicon glyphicon-plus"></i> New User
-                </a>
-                <button type="button" data-toggle="modal" class="btn btn-danger btn-sm delete_selected" table="users">
-                    <i class="glyphicon glyphicon-minus"></i> Delete Selected
-                </button>
             </div>
-            
-            <div style="margin: 20px 0 0 0;"></div>
-
-            <table id="userTable" class="table table-bordered delete_enable_tbl simple_datatable" width="100%" cellspacing="0"> 
-                <thead>
-                    <tr>
-                    	<th>Name</th>
-                    	<th>Address</th>
-                        <th>Username</th>
-                        <th>Date joined</th>
-                        <th>User Type</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    @foreach($list as $key => $value)
-
-                        <tr class="user_row" id="{{ $value->id }}">
-                        	<td class="text-left">{{ ucwords($value->lname) . ", " . ucwords($value->fname) . " " .  ucwords(substr($value->mname, 0, 1)) }}.</td>
-                        	<td>{{ $value->address }}</td>
-                            <td>{{ $value->username }}</td>
-                            <td class="text-center">{{ CustomHelpers::format_date($value->created_at) }}</td>
-                            <td>
-                                @if( $value->user_role == 1 )
-                                    Admin
-                                @else
-                                    User
-                                @endif                                
-                            </td>
-                            <td>
-                            	<a href="#" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Edit"><i class="glyphicon glyphicon-edit"></i></a> | 
-                            	<a href="#" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Change Password"><i class="glyphicon glyphicon-lock"></i></a>
-                            </td>
-                        </tr>
-
-                    @endforeach
-
-                </tbody>
-            </table>
-
+            @endif
         </div>
-	</div>
+
+        <div class="pull-left" style="margin: 0 0 10px 0;">
+            <a href="#addUserForm" id="addUser" data-toggle="modal" class="btn btn-primary btn-sm">
+                <i class="glyphicon glyphicon-plus"></i> New User
+            </a>
+            <button type="button" data-toggle="modal" class="btn btn-danger btn-sm delete_selected" table="users">
+                <i class="glyphicon glyphicon-minus"></i> Delete Selected
+            </button>
+        </div>
+
+        <div style="margin: 20px 0 0 0;"></div>
+
+        <table id="userTable" class="table table-bordered delete_enable_tbl simple_datatable" width="100%" cellspacing="0"> 
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Username</th>
+                    <th>Date joined</th>
+                    <th>User Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach($list as $key => $value)
+
+                <tr class="user_row" id="{{ $value->id }}">
+                    <td class="text-left">{{ ucwords($value->lname) . ", " . ucwords($value->fname) . " " .  ucwords(substr($value->mname, 0, 1)) }}.</td>
+                    <td>{{ $value->address }}</td>
+                    <td>{{ $value->username }}</td>
+                    <td class="text-center">{{ CustomHelpers::format_date($value->created_at) }}</td>
+                    <td>
+                        @if( $value->user_role == 1 )
+                        Admin
+                        @else
+                        User
+                        @endif                                
+                    </td>
+                    <td>
+                        <a href="#" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Edit"><i class="glyphicon glyphicon-edit"></i></a> | 
+                        <a href="#" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Change Password"><i class="glyphicon glyphicon-lock"></i></a>
+                    </td>
+                </tr>
+
+                @endforeach
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
 
 
-	<!-- modal forms -->
+<!-- modal forms -->
 
-	<div class="modal fade" id="addUserForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+<div class="modal fade" id="addUserForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
             <form action="users/new" method="post" id="addUserForm">
 
@@ -95,29 +95,29 @@
 
                     <div class="addEditForm-width">
 
-                    	<div class="form-group clearfix">
-                           <div class="edit_label">First Name <span class="text-danger">*</span></div>
+                        <div class="form-group clearfix">
+                            <div class="edit_label">First Name <span class="text-danger">*</span></div>
                             <div class="edit_field">
                                 {{ Form::text('fname', '', array('class' => 'formInputs form-control', 'id' => 'fname')) }}
                             </div>
                         </div>
 
                         <div class="form-group clearfix">
-                           <div class="edit_label">Middle Name <span class="text-danger">*</span></div>
+                            <div class="edit_label">Middle Name <span class="text-danger">*</span></div>
                             <div class="edit_field">
                                 {{ Form::text('mname', '', array('class' => 'formInputs form-control', 'id' => 'mname')) }}
                             </div>
                         </div>
 
                         <div class="form-group clearfix">
-                           <div class="edit_label">Last Name <span class="text-danger">*</span></div>
+                            <div class="edit_label">Last Name <span class="text-danger">*</span></div>
                             <div class="edit_field">
                                 {{ Form::text('lname', '', array('class' => 'formInputs form-control', 'id' => 'lname')) }}
                             </div>
                         </div>
 
                         <div class="form-group clearfix">
-                           <div class="edit_label">Username <span class="text-danger">*</span></div>
+                            <div class="edit_label">Username <span class="text-danger">*</span></div>
                             <div class="edit_field">
                                 {{ Form::text('username', '', array('class' => 'formInputs form-control', 'id' => 'username')) }}
                             </div>
@@ -160,9 +160,9 @@
 
             </form>
 
-            </div>
         </div>
     </div>
+</div>
 
 
 @stop

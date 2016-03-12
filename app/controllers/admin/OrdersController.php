@@ -1,97 +1,84 @@
 <?php
 
 namespace admin;
+
 use \Auth;
 use \View;
 use \orders;
 use \Redirect;
 use \Response;
 
-class OrdersController extends \BaseController
-{
-	
-	protected $layout = "admin.layouts.master";
+class OrdersController extends \BaseController {
 
-	public function __construct(){
-		$this->beforeFilter(function(){
-            if(!Auth::check()) {
+    protected $layout = "admin.layouts.master";
+
+    public function __construct() {
+        $this->beforeFilter(function() {
+            if (!Auth::check()) {
                 return Redirect::to('admin/login')->with('message', '<div class="alert alert-danger text-center">Your session has expired. Please login to continue.</div>');
             }
         });
-	}
+    }
 
-	public function getList($status)
-	{
-		$orders = new orders();
-		$orderList = $orders->getAllOrders($status);
+    public function getList($status) {
+        $orders = new orders();
+        $orderList = $orders->getAllOrders($status);
 
-		$this->layout->content = View::make('admin.orders')->with('orders', $orderList);
-	}
+        $this->layout->content = View::make('admin.orders')->with('orders', $orderList);
+    }
 
-	public function getView($order_id)
-	{
-		$orders = new orders();
-		$order = $orders->getSpecificOrderForAdminView($order_id);
-		
-		/*print("<pre>". print_r($order, 1) . "</pre>");
-		return "asd";*/
+    public function getView($order_id) {
+        $orders = new orders();
+        $order = $orders->getSpecificOrderForAdminView($order_id);
 
-		$this->layout->content = View::make('admin.viewOrder')->with('order', $order);
-	}
+        /* print("<pre>". print_r($order, 1) . "</pre>");
+          return "asd"; */
 
-	public function getProcess($setstatus, $order_id)
-	{
-		$orders = new orders();
-		$result = $orders->changeStatus($setstatus, $order_id);
+        $this->layout->content = View::make('admin.viewOrder')->with('order', $order);
+    }
 
-		if( $result != FALSE )
-		{
-			return Redirect::to('admin/orders/list/new')
-					->with('message', '<div class="alert alert-success alert-notification">Transaction successful.</div>')
-	        		->withInput();
-		}
-		else
-		{
-			return Redirect::to('admin/orders/list/new')
-					->with('message', '<div class="alert alert-danger alert-notification">Transaction unsuccessful. Please report this to your system administrator.</div>')
-	        		->withInput();
-		}
-	}
+    public function getProcess($setstatus, $order_id) {
+        $orders = new orders();
+        $result = $orders->changeStatus($setstatus, $order_id);
 
-	public function postCancel()
-	{
-		$order_id = Input::get('cancel_order_id');
+        if ($result != FALSE) {
+            return Redirect::to('admin/orders/list/new')
+                            ->with('message', '<div class="alert alert-success alert-notification">Transaction successful.</div>')
+                            ->withInput();
+        } else {
+            return Redirect::to('admin/orders/list/new')
+                            ->with('message', '<div class="alert alert-danger alert-notification">Transaction unsuccessful. Please report this to your system administrator.</div>')
+                            ->withInput();
+        }
+    }
 
-		$order = new orders;
-		$canceled = $order->cancelOrder($order_id);
+    public function postCancel() {
+        $order_id = Input::get('cancel_order_id');
 
-		if( $canceled == true )
-		{
-			return Redirect::to('admin/orders/list/canceled')
-					->with('message', '<div class="alert alert-success alert-notification text-center">Order has been canceled.</div>');
-		}
-		else
-		{
-			return Redirect::to('order/list')
-					->with('message', '<div class="alert alert-danger alert-notification text-center">Unsuccessful transaction. Please contact your system administrator.</div>');
-		}
-		
-	}
+        $order = new orders;
+        $canceled = $order->cancelOrder($order_id);
 
-	public function getGenreport()
-	{
-		$orders = new orders;
-		$list = $orders->genReport();
+        if ($canceled == true) {
+            return Redirect::to('admin/orders/list/canceled')
+                            ->with('message', '<div class="alert alert-success alert-notification text-center">Order has been canceled.</div>');
+        } else {
+            return Redirect::to('order/list')
+                            ->with('message', '<div class="alert alert-danger alert-notification text-center">Unsuccessful transaction. Please contact your system administrator.</div>');
+        }
+    }
 
-		$records = array();
+    public function getGenreport() {
+        $orders = new orders;
+        $list = $orders->genReport();
 
-		foreach($list as $value)
-		{
-			$records[] = array(date('F', mktime(0, 0, 0, $value->month, 10)), $value->count); 
-		}
+        $records = array();
 
-		#print("<pre>" . print_r($records, 1) . "</pre>");
-		return Response::json($records);
-	}
+        foreach ($list as $value) {
+            $records[] = array(date('F', mktime(0, 0, 0, $value->month, 10)), $value->count);
+        }
+
+        #print("<pre>" . print_r($records, 1) . "</pre>");
+        return Response::json($records);
+    }
 
 }

@@ -1,83 +1,83 @@
-$(function() {
-    
-    //var base_url = window.location.protocol + "//" + window.location.host + "/ROSECO-onlinestore/public";
+$(function () {
+
+    var base_url = window.location.protocol + "//" + window.location.host + "/ROSECO-onlinestore/public";
     var delete_id = new Array();
 
-    var loc = window.location;
-    var sep_url = loc.pathname.split("/");
-    var base_url = "http://" + sep_url[1] + "/" + sep_url[2];
-    
+    //var loc = window.location;
+    //var sep_url = loc.pathname.split("/");
+    //var base_url = "http://" + sep_url[1] + "/" + sep_url[2];
+
     /* Set status on load */
-    $(document).ready(function(){
-        
-        $('#records_tbl').DataTable( {
-            "iDisplayLength": 10,   //records per page
+    $(document).ready(function () {
+
+        $('#records_tbl').DataTable({
+            "iDisplayLength": 10, //records per page
             "sort": false,
             "sPaginationType": "bootstrap",
             initComplete: function () {
                 var api = this.api();
-     
-                api.columns().indexes().flatten().each( function ( i ) {
-                    var column = api.column( i );
+
+                api.columns().indexes().flatten().each(function (i) {
+                    var column = api.column(i);
                     var select = $('<select><option value=""></option></select>')
-                        .appendTo( $(column.footer()).empty() )
-                        .on( 'change', function () {
-                            var val = $.fn.dataTable.util.escapeRegex(
-                                $(this).val()
-                            );
-     
-                            column
-                                .search( val ? '^'+val+'$' : '', true, false )
-                                .draw();
-                        } );
-     
-                    column.data().unique().sort().each( function ( d, j ) {
-                        select.append( '<option value="'+d+'">'+d+'</option>' )
-                    } );
-                } );
+                            .appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                        );
+
+                                column
+                                        .search(val ? '^' + val + '$' : '', true, false)
+                                        .draw();
+                            });
+
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+                });
             }
-        } );
+        });
 
 
-        $('.datatable').DataTable( {
-            "iDisplayLength": 10,   //records per page
+        $('.datatable').DataTable({
+            "iDisplayLength": 10, //records per page
             "sort": false,
             "sPaginationType": "bootstrap",
             initComplete: function () {
                 var api = this.api();
-     
-                api.columns().indexes().flatten().each( function ( i ) {
-                    var column = api.column( i );
-                    var select = $('<select><option value=""></option></select>')
-                        .appendTo( $(column.footer()).empty() )
-                        .on( 'change', function () {
-                            var val = $.fn.dataTable.util.escapeRegex(
-                                $(this).val()
-                            );
-     
-                            column
-                                .search( val ? '^'+val+'$' : '', true, false )
-                                .draw();
-                        } );
-     
-                    column.data().unique().sort().each( function ( d, j ) {
-                        select.append( '<option value="'+d+'">'+d+'</option>' )
-                    } );
-                } );
-            }
-        } );
 
-        var formTable = $('.simple_datatable').DataTable( {
-            "iDisplayLength": 10,   //records per page
+                api.columns().indexes().flatten().each(function (i) {
+                    var column = api.column(i);
+                    var select = $('<select><option value=""></option></select>')
+                            .appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                        );
+
+                                column
+                                        .search(val ? '^' + val + '$' : '', true, false)
+                                        .draw();
+                            });
+
+                    column.data().unique().sort().each(function (d, j) {
+                        select.append('<option value="' + d + '">' + d + '</option>')
+                    });
+                });
+            }
+        });
+
+        var formTable = $('.simple_datatable').DataTable({
+            "iDisplayLength": 10, //records per page
             "sort": false,
             "sPaginationType": "bootstrap",
-        } );
+        });
 
 
         var parts = 0;
 
         /* add parts link */
-        $('#customize_div').on('click', '.add_parts', function()
+        $('#customize_div').on('click', '.add_parts', function ()
         {
             parts++;
 
@@ -103,19 +103,19 @@ $(function() {
                         </div>\
                     </div>';
 
-            $( "#customize_div" ).append( $appendRow );
+            $("#customize_div").append($appendRow);
 
-            
+
         });
 
 
-        $("#customize_div").on("click", ".remove_part", function(e){ //user click on remove text
-            e.preventDefault(); 
-            $(this).parent('div').parent('div').parent('div').remove(); 
+        $("#customize_div").on("click", ".remove_part", function (e) { //user click on remove text
+            e.preventDefault();
+            $(this).parent('div').parent('div').parent('div').remove();
             parts--;
         });
 
-        $('#customize_div').on("click", '#add_choices', function()
+        $('#customize_div').on("click", '#add_choices', function ()
         {
             var part_no = $(this).attr('part_no');
 
@@ -138,18 +138,18 @@ $(function() {
                                 </div>\
                             </div>";
 
-            $( "#part_" + part_no ).append( $appendChoices );
+            $("#part_" + part_no).append($appendChoices);
 
         });
 
-        $("#customize_div").on("click", ".remove_choice", function(e){ //user click on remove text
-            e.preventDefault(); 
+        $("#customize_div").on("click", ".remove_choice", function (e) { //user click on remove text
+            e.preventDefault();
             $(this).parent('div').parent('div').remove();
         });
 
 
         /* edit: add new image */
-        $('#product_image_div').on("click", '.add_image', function()
+        $('#product_image_div').on("click", '.add_image', function ()
         {
             var part_no = $(this).attr('part_no');
 
@@ -160,18 +160,18 @@ $(function() {
                                 </div>\
                             </div>";
 
-            $( "#product_image_div" ).append( $appendImage );
+            $("#product_image_div").append($appendImage);
 
         });
 
-        $("#product_image_div").on("click", ".remove_image", function(e){ //user click on remove text
-            e.preventDefault(); 
+        $("#product_image_div").on("click", ".remove_image", function (e) { //user click on remove text
+            e.preventDefault();
             $(this).parent('div').remove();
         });
 
 
         /* edit: add new choices */
-        $('#customize_div').on("click", '#add_new_choices', function()
+        $('#customize_div').on("click", '#add_new_choices', function ()
         {
             var part_id = $(this).attr('part_id');
 
@@ -191,133 +191,124 @@ $(function() {
                                 </div>\
                             </div>";
 
-            $( "#part_" + part_id ).append( $appendChoices );
+            $("#part_" + part_id).append($appendChoices);
 
         });
 
-        $("#customize_div").on("click", ".remove_choice", function(e){ //user click on remove text
-            e.preventDefault(); 
+        $("#customize_div").on("click", ".remove_choice", function (e) { //user click on remove text
+            e.preventDefault();
             $(this).parent('div').remove();
         });
 
-        
-        
+
+
     });
-    
+
     /* tooltip */
     $('[rel=tooltip]').tooltip({
         placement: 'top'
     });
-    
-        
+
+
     $('.dropdown-toggle').dropdown();
 
-	$('.alert-notification').fadeOut(5000);	
+    $('.alert-notification').fadeOut(5000);
 
-    
+
     /* date picker */
     $('.datepicker').datetimepicker({
-        i18n:{
-            de:{
-                months:[
-                    'Januar','Februar','März','April',
-                    'Mai','Juni','Juli','August',
-                    'September','Oktober','November','Dezember',
-                   ],
-                dayOfWeek:[
-                    "So.", "Mo", "Di", "Mi", 
+        i18n: {
+            de: {
+                months: [
+                    'Januar', 'Februar', 'März', 'April',
+                    'Mai', 'Juni', 'Juli', 'August',
+                    'September', 'Oktober', 'November', 'Dezember',
+                ],
+                dayOfWeek: [
+                    "So.", "Mo", "Di", "Mi",
                     "Do", "Fr", "Sa.",
-                   ]
-                }
-         },
-         timepicker:false,
-         format:'d.m.Y'
-    
+                ]
+            }
+        },
+        timepicker: false,
+        format: 'd.m.Y'
+
     });
-    
-            
+
+
     /* multiple row selection */
-    $('.delete_enable_tbl tbody').on( 'click', 'tr', function () {
+    $('.delete_enable_tbl tbody').on('click', 'tr', function () {
 
         var selected_id = $(this).closest('tr').attr('id');
         var table = $(this).closest('tr').attr('table');
         var arr = new Array();
 
         var tr = $(this).closest('tr');
-        var row = formTable.row( tr );
+        var row = formTable.row(tr);
 
         row.child.hide();
 
-        if( $(this).hasClass('selected') ){
+        if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
 
-            delete_id.splice($.inArray(selected_id, delete_id),1); //remove value from array
+            delete_id.splice($.inArray(selected_id, delete_id), 1); //remove value from array
 
         } else {
             $(this).addClass('selected');
             delete_id.push(selected_id);
         }
 
-    } );
- 
+    });
+
 
     /* delete button (multiple) */
-    $('.delete_selected').on('click', function(){
-        
+    $('.delete_selected').on('click', function () {
+
         var table = $(this).attr('table');
         var id_count = delete_id.length;
 
-        if( id_count === 0 ){
+        if (id_count === 0) {
             bootbox.alert("No items selected.");
             return false;
         }
 
-        bootbox.confirm("Are you sure you want to delete " + id_count + " item(s)?", function(result) {
+        bootbox.confirm("Are you sure you want to delete " + id_count + " item(s)?", function (result) {
 
-            if(result == true){
+            if (result == true) {
 
                 //$.each(delete_id, function( index, value ) {
 
-                    $.ajax({
-                            type: "POST",
-                            url : base_url + "/delete",
-                            data : {
-                                ids: delete_id,
-                                table: table
-                            },
-                            success : function(data){
-
-                                if( data == 'true' )
-                                {
-                                    window.location.reload();
-                                }
-                                else
-                                {
-                                    alert(data);
-                                }
-                                
-                            }
-                        },"json");
+                $.ajax({
+                    type: "POST",
+                    url: base_url + "/delete",
+                    data: {
+                        ids: delete_id,
+                        table: table
+                    },
+                    success: function (data) {
+                        window.location.reload();
+                    }
+                }, "json");
 
                 //});
 
             }
 
         });
-        
+
     });
 
-    
- 
-	$('.close_form').click(function(){
+
+
+    $('.close_form').click(function () {
         $('form').trigger('reset');
         $('#available_stock_div').hide();
-        $('#new_stocks_div').hide();	
+        $('#new_stocks_div').hide();
     });
 
 
 
-    $('table#products_tbl tr.product_list').dblclick(function(){
+    $('table#products_tbl tr.product_list').dblclick(function () {
 
         var prod_id = $(this).closest('tr').attr('id');
         var cat_id = $(this).closest('tr').attr('cat_id');
@@ -337,9 +328,9 @@ $(function() {
 
     });
 
-    
 
-    $('select#product_id').on('change', function() {
+
+    $('select#product_id').on('change', function () {
 
         product_id = $(this).val();
 
@@ -348,18 +339,18 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url : base_url + "/delivery/checkstock",
-            data : {
+            url: base_url + "/delivery/checkstock",
+            data: {
                 id: product_id
             },
-            success : function(data){
+            success: function (data) {
 
                 $('#stock_available').text(data);
 
             }
-        },"json");
+        }, "json");
 
-        if( product_id != '' )
+        if (product_id != '')
         {
             $('#delivery_qty').prop('disabled', false);
         } else {
@@ -371,11 +362,11 @@ $(function() {
     });
 
 
-    $(document).on('change', '.product_check', function() {
+    $(document).on('change', '.product_check', function () {
 
         var input = $(this).closest('div#product').children('input');
 
-        if( $(this).is(":checked"))
+        if ($(this).is(":checked"))
         {
             input.show().prop("disabled", false);
         } else {
@@ -384,12 +375,12 @@ $(function() {
             $(this).closest('div#product').children('div.error').hide();
         }
 
-    }); 
+    });
 
     var errors = 0;
-    $(document).on('keyup', '#deliver_qty', function(){
+    $(document).on('keyup', '#deliver_qty', function () {
 
-        qty = $(this).val();    
+        qty = $(this).val();
         product_id = $(this).attr('prod_id');
 
         error_div = $(this).closest("div").children('div.error');
@@ -398,38 +389,37 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url : base_url + "/delivery/computestock",
-            data : {
+            url: base_url + "/delivery/computestock",
+            data: {
                 product_id: product_id,
                 qty: qty
             },
-            success : function(data){
+            success: function (data) {
 
-               if( data < 0 )
-               {
+                if (data < 0)
+                {
                     error_div.text('Quantity exceeds available stocks.');
                     $('.delivery_save').prop('disabled', true);
                     $('.save_error').show();
                     errors++;
-               } 
-               else 
-               {
+                } else
+                {
                     error_div.text('Available stocks after delivery: ' + data);
                     $('.delivery_save').prop('disabled', false);
                     $('.save_error').hide();
-               }
+                }
 
             }
-        },"json");
+        }, "json");
 
 
     });
 
-    
-    var errors = 0;
-    $(document).on('keyup', '#return_qty', function(){
 
-        qty = $(this).val();    
+    var errors = 0;
+    $(document).on('keyup', '#return_qty', function () {
+
+        qty = $(this).val();
         product_id = $(this).attr('prod_id');
 
         error_div = $(this).closest("div").children('div.error');
@@ -438,33 +428,35 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url : base_url + "/delivery/computereturn",
-            data : {
+            url: base_url + "/delivery/computereturn",
+            data: {
                 product_id: product_id,
                 qty: qty
             },
-            success : function(data){
-               
+            success: function (data) {
+
                 error_div.text('Available stocks after return: ' + data);
                 $('.delivery_save').prop('disabled', false);
                 $('.save_error').hide();
 
             }
-        },"json");
+        }, "json");
 
 
     });
 
 
-    $('.btntry').click(function(){
-        
+    $('.btntry').click(function () {
+
         var values = new Array();
 
-        $("input[name='qty[]']").each(function(){
+        $("input[name='qty[]']").each(function () {
             values.push($(this).val());
         });
 
-        var newValues = values.filter(function(v){return v!==''});
+        var newValues = values.filter(function (v) {
+            return v !== ''
+        });
 
         var total = 0;
         for (var i = 0; i < newValues.length; i++) {
@@ -477,29 +469,29 @@ $(function() {
     });
 
 
-    $('.approve_btn').on('click', function(){
+    $('.approve_btn').on('click', function () {
 
         var id = $(this).attr('id');
 
-        bootbox.confirm("You are about to approve the returned orders. Once you approve this, you cannot cancel the approved returned orders. Continue?", function(result) {
+        bootbox.confirm("You are about to approve the returned orders. Once you approve this, you cannot cancel the approved returned orders. Continue?", function (result) {
 
-            if(result == true){
+            if (result == true) {
 
                 $.ajax({
                     type: "POST",
-                    url : base_url + "/delivery/approvereturn",
-                    data : {
+                    url: base_url + "/delivery/approvereturn",
+                    data: {
                         id: id
                     },
-                    success : function(data){
-                        
-                        if( data == 'ok' )
+                    success: function (data) {
+
+                        if (data == 'ok')
                         {
                             window.location.reload();
                         }
 
                     }
-                },"json");
+                }, "json");
 
             }
         });
@@ -507,89 +499,58 @@ $(function() {
     });
 
 
-    $('.cancel_btn').on('click', function(){
+    $('.cancel_btn').on('click', function () {
 
         var id = $(this).attr('id');
 
-        bootbox.confirm("Cancel returned orders, continue?", function(result) {
+        bootbox.confirm("Cancel returned orders, continue?", function (result) {
 
-            if(result == true){
+            if (result == true) {
 
                 $.ajax({
                     type: "POST",
-                    url : base_url + "/delivery/return/0",
-                    data : {
+                    url: base_url + "/delivery/return/0",
+                    data: {
                         id: id
                     },
-                    success : function(data){
+                    success: function (data) {
 
-                        if( data == 'ok' )
+                        if (data == 'ok')
                         {
                             window.location.reload();
                         }
 
                     }
-                },"json");
+                }, "json");
 
             }
         });
 
     });
 
-    $('.return_btn').on('click', function(){
+    $('.return_btn').on('click', function () {
 
         var id = $(this).attr('id');
 
-        bootbox.confirm("Return orders, continue?", function(result) {
+        bootbox.confirm("Return orders, continue?", function (result) {
 
-            if(result == true){
+            if (result == true) {
 
                 $.ajax({
                     type: "POST",
-                    url : base_url + "/delivery/return/1",
-                    data : {
+                    url: base_url + "/delivery/return/1",
+                    data: {
                         id: id
                     },
-                    success : function(data){
+                    success: function (data) {
 
-                        if( data == 'ok' )
+                        if (data == 'ok')
                         {
                             window.location.reload();
                         }
 
                     }
-                },"json");
-
-            }
-        });
-
-    });
-
-
-    $('.delivered_btn').on('click', function(){
-
-        var id = $(this).attr('id');
-
-        bootbox.confirm("This will set the status to DELIVERED. Once the status set to DELIVERED, you cannot change it anymore. Continue?", function(result) {
-
-            if(result == true){
-
-                $.ajax({
-                    type: "POST",
-                    url : base_url + "/delivery/delivered",
-                    data : {
-                        id: id
-                    },
-                    success : function(data){
-
-                        if( data == 'ok' )
-                        {
-                            window.location.reload();
-                        }
-                        
-
-                    }
-                },"json");
+                }, "json");
 
             }
         });
@@ -597,7 +558,38 @@ $(function() {
     });
 
 
-    $('.view_orders_btn').click(function(){
+    $('.delivered_btn').on('click', function () {
+
+        var id = $(this).attr('id');
+
+        bootbox.confirm("This will set the status to DELIVERED. Once the status set to DELIVERED, you cannot change it anymore. Continue?", function (result) {
+
+            if (result == true) {
+
+                $.ajax({
+                    type: "POST",
+                    url: base_url + "/delivery/delivered",
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
+
+                        if (data == 'ok')
+                        {
+                            window.location.reload();
+                        }
+
+
+                    }
+                }, "json");
+
+            }
+        });
+
+    });
+
+
+    $('.view_orders_btn').click(function () {
 
         var id = $(this).attr('id');
 
@@ -606,7 +598,7 @@ $(function() {
     });
 
 
-    $('table#userTable tr.user_row').dblclick(function(){
+    $('table#userTable tr.user_row').dblclick(function () {
 
         var id = $(this).closest('tr').attr('id');
 
@@ -614,7 +606,7 @@ $(function() {
         var username = $tr.eq(0).text();
         var usertype = $tr.eq(1).text();
 
-        if( $.trim(usertype) == 'Admin' )
+        if ($.trim(usertype) == 'Admin')
         {
             var type = '1';
         } else {
@@ -629,7 +621,7 @@ $(function() {
 
     });
 
-    $('.delivery_row td:not(:last-child)').click(function(){
+    $('.delivery_row td:not(:last-child)').click(function () {
 
         var id = $(this).closest('tr').attr('id');
 
@@ -640,62 +632,62 @@ $(function() {
 
     /* ############ Common classes ############# */
 
-    /* data tables */    
+    /* data tables */
     var formTable = $('#usersTable').DataTable({
-            "iDisplayLength": 50,   //records per page
-            "sPaginationType": "bootstrap"
-        });
+        "iDisplayLength": 50, //records per page
+        "sPaginationType": "bootstrap"
+    });
 
 
 
     /* single delete */
-    $(document).on("click", ".delete_item", function(e) {
-            
+    $(document).on("click", ".delete_item", function (e) {
+
         var id = $(this).attr('id');
         var table = $(this).attr('table');
-        
-        
-        if ( $(this).hasClass('to_delete') ) {
-            
+
+
+        if ($(this).hasClass('to_delete')) {
+
             $(this).removeClass('to_delete');
-        
+
         } else {
-        
+
             $($(this).parents('tr')).addClass('to_delete');
-            
+
         }
 
 
-        bootbox.confirm("Are you sure you want to delete?", function(result) {
+        bootbox.confirm("Are you sure you want to delete?", function (result) {
 
-            if(result == true){
-                
-               $.ajax({
+            if (result == true) {
+
+                $.ajax({
                     type: "POST",
-                    url : base_url + "/delete",
-                    data : {
+                    url: base_url + "/delete",
+                    data: {
                         ids: id,
                         table: table
                     },
-                    success : function(data){
+                    success: function (data) {
                         window.location.reload();
                     }
-                },"json");
-                
-            } 
-            
-        }); 
+                }, "json");
+
+            }
+
+        });
 
     });
 
 
-    $('.save_button').on('click', function(e){
+    $('.save_button').on('click', function (e) {
 
         var btn = $(this);
         var form = $(this).closest('form');
         btn.button('loading');
         setTimeout(function () {
-            
+
             btn.button('reset');
             form.submit();
             $('.close').click();
@@ -706,22 +698,20 @@ $(function() {
     })
 
 
-    $('.gen_report_btn').on('click', function(){
+    $('.gen_report_btn').on('click', function () {
 
         var date_from = $("#date_from").val();
         var date_to = $("#date_to").val();
 
-        if( date_from == '' )
+        if (date_from == '')
         {
             $("#error_msg").html('Error: All fields are requried.');
             return false;
-        } 
-        else if( date_to == '' )
+        } else if (date_to == '')
         {
             $("#error_msg").html('Error: All fields are requried.');
             return false;
-        }
-        else
+        } else
         {
             $("#error_msg").html('');
             $(this).closest('form').submit();
@@ -730,9 +720,9 @@ $(function() {
     });
 
 
-    $('[type=checkbox][name=customizable]').click(function()
+    $('[type=checkbox][name=customizable]').click(function ()
     {
-        if( $(this).is(":checked"))
+        if ($(this).is(":checked"))
         {
             $('#customize_div').show();
         } else {
@@ -741,9 +731,9 @@ $(function() {
 
     });
 
-    $('[type=checkbox][name=read_terms]').click(function()
+    $('[type=checkbox][name=read_terms]').click(function ()
     {
-        if( $(this).is(":checked"))
+        if ($(this).is(":checked"))
         {
             $('.register_btn').prop("disabled", false);
         } else {
@@ -752,67 +742,64 @@ $(function() {
 
     });
 
-    $('.customer_cancel_order').on('click', function()
+    $('.customer_cancel_order').on('click', function ()
     {
         var order_id = $(this).attr('id');
 
-        bootbox.confirm("Are you sure you cancel your order?", function(result) {
+        bootbox.confirm("Are you sure you cancel your order?", function (result) {
 
-            if(result == true){
+            if (result == true) {
 
                 $.ajax({
                     type: "POST",
-                    url : base_url + "/order/cancel",
-                    data : {
+                    url: base_url + "/order/cancel",
+                    data: {
                         order_id: order_id
                     },
-                    success : function(data){
-                        
-                        if( data == 'true' )
+                    success: function (data) {
+
+                        if (data == 'true')
                         {
                             window.location.reload();
-                        }
-                        else
+                        } else
                         {
                             alert('Unsuccesful transaction.');
                         }
                     }
-                },"json");
+                }, "json");
 
             }
 
         });
-        
+
     })
 
-    $('#cancelOrder').click(function()
+    $('#cancelOrder').click(function ()
     {
         var order_id = $(this).attr('order_id');
         $('input[name=cancel_order_id]').val(order_id);
         $('textarea[name=cancelation_reason]').val('');
     });
-      
 
-    $('.cancel_order_btn').click(function()
+
+    $('.cancel_order_btn').click(function ()
     {
 
         var reason = $('textarea[name=cancelation_reason]').val();
-        
-        if( reason == "" )
+
+        if (reason == "")
         {
             $('#error_div').text('Please provide a reason for cancelation');
-        }
-        else if( reason.length > 150 )
+        } else if (reason.length > 150)
         {
-            $('#error_div').text('Reason is maximum of 150 characters only.');   
-        }
-        else
+            $('#error_div').text('Reason is maximum of 150 characters only.');
+        } else
         {
             var btn = $(this);
             var form = $(this).closest('form');
             btn.button('loading');
             setTimeout(function () {
-                
+
                 btn.button('reset');
                 form.submit();
                 $('.close').click();
@@ -822,16 +809,16 @@ $(function() {
 
     })
 
-    $('.btn_trash').click(function()
+    $('.btn_trash').click(function ()
     {
 
         var id = $(this).attr('order_id');
 
-        bootbox.confirm("Are you sure you want to move this order to trash?", function(result) {
+        bootbox.confirm("Are you sure you want to move this order to trash?", function (result) {
 
-            if(result == true){
+            if (result == true) {
 
-                $.get( base_url + "/admin/orders/process/delete/" + id, function( data ) {
+                $.get(base_url + "/admin/orders/process/delete/" + id, function (data) {
                     window.location = base_url + "/admin/orders/list/deleted";
                 });
 
@@ -840,7 +827,7 @@ $(function() {
         });
     })
 
-    
+
 }); // function
 
 
@@ -848,7 +835,7 @@ $(function() {
 $(function () {
 
     var base_url = window.location.protocol + "//" + window.location.host + "/ROSECO-onlinestore/public";
-    
+
     var options = {
         chart: {
             renderTo: 'highcharts_container',
@@ -877,17 +864,18 @@ $(function () {
             }
         },
         series: [{
-            type: 'pie',
-            name: ''
-        }]
+                type: 'pie',
+                name: ''
+            }]
     };
-
-    $.getJSON(base_url + "/admin/orders/genreport", function(data) {
+    
+    $.getJSON(base_url + "/admin/orders/genreport", function (data) {
+        console.log(data);
         options.series[0].data = data;
         var chart = new Highcharts.Chart(options);
     });
 
-   
+
 
 
     /* Report Graph */
@@ -899,16 +887,13 @@ $(function () {
             marginTop: 80,
             marginRight: 40
         },
-
         title: {
             text: 'ROSECO Marketing Venture sales report ' + (new Date).getFullYear()
         },
-
         xAxis: {
             categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            crosshair:true
+            crosshair: true
         },
-
         yAxis: {
             allowDecimals: false,
             min: 0,
@@ -916,38 +901,35 @@ $(function () {
                 text: ''
             }
         },
-
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
         },
-
         plotOptions: {
             column: {
                 pointPadding: 0.2,
                 borderWidth: 0
             }
         },
-
         series: [{
-            stack: 'male'
-        }, {
-            stack: 'male'
-        }, {
-            stack: 'female'
-        }, {
-            stack: 'female'
-        }]
+                stack: 'male'
+            }, {
+                stack: 'male'
+            }, {
+                stack: 'female'
+            }, {
+                stack: 'female'
+            }]
     };
 
-    $.getJSON(base_url + "/admin/report/genreport", function(data) {
+    $.getJSON(base_url + "/admin/report/genreport", function (data) {
         //options.series[0].data = data;
         var i = 0;
-        $.each(data, function(key, value){
+        $.each(data, function (key, value) {
             //console.log(key);
             options2.series[i].name = key;
             options2.series[i].data = value;
@@ -956,14 +938,14 @@ $(function () {
         var chart = new Highcharts.Chart(options2);
     });
 
-    
+
 });
 
 /*$(document).ready(function(){
-
-    $('input').iCheck({
-         checkboxClass: 'icheckbox_square-blue'
-    });
-
-});*/
+ 
+ $('input').iCheck({
+ checkboxClass: 'icheckbox_square-blue'
+ });
+ 
+ });*/
 
