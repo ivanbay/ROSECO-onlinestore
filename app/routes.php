@@ -35,7 +35,7 @@ Route::controller('admin/home', "admin\HomeController");
 
 Route::controller('admin/users', "admin\UsersController");
 
-Route::controller('admin/products', "admin\ProductsController");
+#Route::controller('admin/products', "admin\ProductsController");
 
 Route::controller('admin/orders', "admin\OrdersController");
 
@@ -48,7 +48,7 @@ Route::controller('login', 'LoginController');
 
 Route::controller('home', 'HomeController');
 
-Route::controller('product', 'ProductController');
+#Route::controller('product', 'ProductController');
 
 Route::controller('order', 'OrderController');
 
