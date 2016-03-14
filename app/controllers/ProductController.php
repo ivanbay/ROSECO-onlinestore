@@ -3,7 +3,7 @@
 /**
  * 
  */
-class productController extends baseController {
+class ProductController extends baseController {
 
     protected $layout = 'layouts.master';
 
